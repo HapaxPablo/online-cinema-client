@@ -3,7 +3,7 @@ import { IButton } from './form.interface'
 import cn from 'classnames'
 import styles from './form.module.scss'
 
-const Button: FC<IButton> = ({ children, className, ...rest }) => {
+const Button: FC<IButton> = ({ children, className, ...rest } ) => {
 	return (
 		<button className={cn(styles.button)} {...rest}>
 			{children}
