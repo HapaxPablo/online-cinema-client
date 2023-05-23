@@ -13,7 +13,7 @@ const DynamicCheckRole = dynamic(() => import('./CheckRole'), { ssr: false })
 const AuthProvider: FC<TypeComponentAuthFields> = ({
 	children,
 	Component: { isOnlyAdmin, isOnlyUser },
-}) => {
+  }) => {
 	const { user } = useAuth()
 	const { checkAuth, logout } = useActions()
 	const { pathname } = useRouter()
