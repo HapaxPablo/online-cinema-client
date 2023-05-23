@@ -4,11 +4,7 @@ import Navigation from './Navigation/Navigation'
 
 import Sidebar from './Sidebar/Sidebar'
 
-type LayoutProps = {
-	children: ReactNode;
-  }
-
-const Layout: FC<LayoutProps> = ({ children }) => {
+const Layout: FC = ({ children }) => {
 	return (
 		<div className={styles.layout}>
 			<Navigation />
