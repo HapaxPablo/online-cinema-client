@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="247"
+   height="34"
+   fill="none"
+   version="1.1"
+   id="svg10"
+   sodipodi:docname="logo.svg"
+   inkscape:version="1.2.2 (b0a8486, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs14" />
+  <sodipodi:namedview
+     id="namedview12"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="5.805668"
+     inkscape:cx="120.65795"
+     inkscape:cy="36.257671"
+     inkscape:window-width="2160"
+     inkscape:window-height="1387"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg10" />
+  <path
+     d="M18 33h16v-2.586h-7.277A15.924 15.924 0 0 1 18 33ZM18 27.182a3.236 3.236 0 0 1-3.232-3.232A3.236 3.236 0 0 1 18 20.716v-7.434a3.236 3.236 0 0 1-3.232-3.232A3.236 3.236 0 0 1 18 6.817V1C9.163 1 2 8.163 2 17s7.163 16 16 16v-5.818Zm-6.95-6.95A3.236 3.236 0 0 1 7.818 17a3.236 3.236 0 0 1 3.232-3.232A3.236 3.236 0 0 1 14.284 17a3.236 3.236 0 0 1-3.232 3.232Z"
+     fill="#E30B13"
+     id="path2" />
+  <path
+     d="M 34,17.000009 C 34,8.1630091 26.837,1.0000091 18,1.0000091 v 5.818 a 3.236,3.236 0 0 1 3.232,3.2319999 3.236,3.236 0 0 1 -3.232,3.234 v 7.434 a 3.236,3.236 0 0 1 3.232,3.233 3.236,3.236 0 0 1 -3.232,3.23 v 5.819 c 3.218,0 6.214,-0.95 8.723,-2.586 4.38,-2.854 7.277,-7.796 7.277,-13.414 z m -9.05,-3.232 a 3.236,3.236 0 0 1 3.231,3.232 3.236,3.236 0 0 1 -3.232,3.232 3.236,3.236 0 0 1 -3.233,-3.232 3.236,3.236 0 0 1 3.233,-3.232 z"
+     fill="#ce080f"
+     id="path4" />
+  <text
+     xml:space="preserve"
+     style="font-weight:bold;font-size:26.6667px;font-family:Menlo;-inkscape-font-specification:'Menlo Bold';fill:#f9f9f9"
+     x="36.516037"
+     y="27.651064"
+     id="text174"><tspan
+       sodipodi:role="line"
+       id="tspan172"
+       x="36.516037"
+       y="27.651064">online cinema</tspan></text>
+</svg>
