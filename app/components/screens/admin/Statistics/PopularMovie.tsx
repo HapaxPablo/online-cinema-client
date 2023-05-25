@@ -31,7 +31,7 @@ const PopularMovie: FC = () => {
 						<Link legacyBehavior href={getMovieUrl(movie.slug)}>
 							<a>
 								<Image
-									width={285}
+									width={400}
 									height={176}
 									src={movie.bigPoster}
 									alt={movie.title}

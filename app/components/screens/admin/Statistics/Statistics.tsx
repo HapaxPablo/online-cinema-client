@@ -6,7 +6,7 @@ import PopularMovie from './PopularMovie'
 
 const Statistics:FC = () => {
   return (
-    <div className={styles.statistic}>
+    <div className={styles.statistics}>
       <CountUsers />
       <PopularMovie />
     </div>
