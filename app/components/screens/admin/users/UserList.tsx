@@ -15,10 +15,10 @@ const UserList: FC = () => {
 			<Heading title="Пользователи" />
 			<AdminHeader handleSearch={handleSearch} searchTerm={searchTerm} />
 			<AdminTable
-				tableItems={data || []}
-				headerItems={['Email', 'Дата регистрации']}
 				isLoading={isLoading}
 				removeHandler={deleteAsync}
+				headerItems={['Email', 'Date register']}
+				tableItems={data || []}
 			/>
 		</Meta>
 	)

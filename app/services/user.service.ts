@@ -1,6 +1,6 @@
 import { IUser } from '@/shared/types/user.types'
-import axios from 'axios'
 import { getUsersUrl } from 'config/api.config'
+import axios from 'api/interceptors'
 
 export const UserService = {
 	async getAll(searchTerm?: string) {
