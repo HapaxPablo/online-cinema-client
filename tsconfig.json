@@ -39,7 +39,8 @@
 		"**/*.ts",
 		"**/*.tsx",
 		".next/types/**/*.ts",
-		"app/components/layout/Sidebar/Search/Search.module.scss"
+		"app/components/layout/Sidebar/Search/Search.module.scss",
+		"app/components/ui/admin-table/AdminHeader/AdminCreateButton/AdminCreateButton.module.cscc"
 	],
 	"exclude": ["node_modules"]
 }

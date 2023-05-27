@@ -4,12 +4,14 @@ import Meta from '@/utils/meta/Meta'
 import { FC } from 'react'
 import Statistics from './Statistics/Statistics'
 
-const Admin:FC = () => {
-  return <Meta title='Admin Panel'>
-    <AdminNavigation />
-    <Heading title='Статистика'/>
-    <Statistics />
-  </Meta>
+const Admin: FC = () => {
+	return (
+		<Meta title="Admin Panel">
+			<AdminNavigation />
+			<Heading title="Статистика" />
+			<Statistics />
+		</Meta>
+	)
 }
 
 export default Admin
