@@ -1,37 +1,38 @@
-import { useUpload } from './useUpload'
 import cn from 'classnames'
 import Image from 'next/image'
 import { FC } from 'react'
+import SkeletonLoader from '../../SkeletonLoader'
+
 import { IUploadField } from '../form.interface'
 import styles from '../form.module.scss'
-import SkeletonLoader from '../../SkeletonLoader'
+
+import { useUpload } from './useUpload'
 
 const UploadField: FC<IUploadField> = ({
 	placeholder,
 	error,
 	style,
-	value,
+	image,
 	folder,
 	onChange,
 	isNoImage = false,
 }) => {
-	const { uploadFile, isLoading } = useUpload(onChange, folder)
+	const { uploadImage, isLoading } = useUpload(onChange, folder)
 
 	return (
 		<div className={cn(styles.field, styles.uploadField)} style={style}>
-			<div className={cn(styles.uploadFlex)}>
+			<div className={styles.uploadFlex}>
 				<label>
 					<span>{placeholder}</span>
-					<input type="file" onChange={uploadFile} />
+					<input type="file" onChange={uploadImage} />
 					{error && <div className={styles.error}>{error.message}</div>}
 				</label>
-
 				{!isNoImage && (
 					<div className={styles.uploadImageContainer}>
 						{isLoading ? (
 							<SkeletonLoader count={1} className="w-full h-full" />
 						) : (
-							value && <Image alt="" src={value} layout="fill" unoptimized />
+							image && <Image src={image} alt="" layout="fill" unoptimized />
 						)}
 					</div>
 				)}

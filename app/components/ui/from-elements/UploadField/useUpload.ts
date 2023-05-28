@@ -7,7 +7,7 @@ type TypeUpload = (
 	onChange: (...event: any[]) => void,
 	folder?: string
 ) => {
-	uploadFile: (e: ChangeEvent<HTMLInputElement>) => Promise<void>
+	uploadImage: (e: ChangeEvent<HTMLInputElement>) => Promise<void>
 	isLoading: boolean
 }
 
@@ -27,13 +27,13 @@ export const useUpload: TypeUpload = (onChange, folder) => {
 		}
 	)
 
-	const uploadFile = useCallback(
+	const uploadImage = useCallback(
 		async (e: ChangeEvent<HTMLInputElement>) => {
 			setIsLoading(true)
 			const files = e.target.files
 			if (files?.length) {
 				const formData = new FormData()
-				formData.append('file', files[0])
+				formData.append('image', files[0])
 				await mutateAsync(formData)
 
 				setTimeout(() => {
@@ -44,5 +44,5 @@ export const useUpload: TypeUpload = (onChange, folder) => {
 		[mutateAsync]
 	)
 
-	return useMemo(() => ({ uploadFile, isLoading }), [uploadFile, isLoading])
+	return useMemo(() => ({ uploadImage, isLoading }), [uploadImage, isLoading])
 }
