@@ -70,7 +70,7 @@ const ActorEdit: FC = () => {
 						/>
 					</div>
 
-					<Button>Обновить</Button>
+					<Button>Сохранить</Button>
 				</form>
 			)}
 		</Meta>

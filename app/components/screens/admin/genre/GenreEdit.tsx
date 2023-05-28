@@ -95,7 +95,7 @@ const GenreEdit: FC = () => {
 								},
 							}}
 						/>
-						<Button>Обновить</Button>
+						<Button>Сохранить</Button>
 					</>
 				)}
 			</form>
