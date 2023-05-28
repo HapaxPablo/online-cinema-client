@@ -44,24 +44,24 @@ const MovieEdit: FC<IMovieEditInput> = () => {
 					<SkeletonLoader count={3} />
 				) : (
 					<>
-						<div className={formStyles.fields}>
+						{/*<div className={formStyles.fields}>
 							<Field
-								{...register('name', { required: 'Требуется название!' })}
+								{...register('title', { required: 'Требуется название!' })}
 								placeholder="Название"
-								error={errors.name}
+								error={errors.title}
 								style={{ width: '31%' }}
 							/>
 							<div style={{ width: '31%' }}>
 								<SlugField
 									generate={() =>
-										setValue('slug', generateSlug(getValues('name')))
+										setValue('slug', generateSlug(getValues('slug')))
 									}
 									register={register}
 									error={errors.slug}
 								/>
 							</div>
 							<Field
-								{...register('icon', { required: 'Требуется иконка(MdIcon)!' })}
+								{...register('', { required: 'Требуется иконка(MdIcon)!' })}
 								placeholder="Иконка"
 								error={errors.icon}
 								style={{ width: '31%' }}
@@ -89,7 +89,7 @@ const MovieEdit: FC<IMovieEditInput> = () => {
 								},
 							}}
 						/>
-						<Button>Обновить</Button>
+						<Button>Обновить</Button>*/}
 					</>
 				)}
 			</form>
