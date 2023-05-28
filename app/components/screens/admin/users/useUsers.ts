@@ -1,7 +1,7 @@
 import { ITableItem } from '@/components/ui/admin-table/AdminTable/admin-table.interface'
 import { useDebounce } from '@/hooks/useDebounce'
 import { UserService } from '@/services/user.service'
-import { convertMongoDate } from '@/utils/date/converMongoDate'
+import { convertMongoDate } from '@/utils/date/convertMongoDate'
 import { toastError } from '@/utils/toast-error'
 import { getAdminUrl } from 'config/url.config'
 import { ChangeEvent, useMemo, useState } from 'react'
@@ -37,10 +37,10 @@ export const useUsers = () => {
 		(userId: string) => UserService.deleteUser(userId),
 		{
 			onError: (error) => {
-				toastError(error, 'Delete user')
+				toastError(error, 'Удалить пользователя')
 			},
 			onSuccess: () => {
-				toastr.success('Delete user', 'Delete was successful')
+				toastr.success('Удалить пользователя', 'Успешно!')
 				queryData.refetch()
 			},
 		}
