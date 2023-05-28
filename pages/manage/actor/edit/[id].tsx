@@ -3,7 +3,7 @@ import ActorEdit from '@/screens/admin/actor/ActorEdit'
 import { NextPageAuth } from '@/shared/types/auth.types'
 
 const ActorEditPage: NextPageAuth = () => {
-	return <ActorEdit />
+	return <ActorEdit photo={''} name={''} countMovies={0} slug={''} />
 }
 
 ActorEditPage.isOnlyAdmin = true
