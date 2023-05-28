@@ -38,7 +38,7 @@ const ActorEdit: FC = () => {
 					<div className={formStyles.fields}>
 						<Field
 							{...register('name', {
-								required: 'Name is required!',
+								required: 'Нет имени!',
 							})}
 							placeholder="Name"
 							error={errors.name}
@@ -57,7 +57,7 @@ const ActorEdit: FC = () => {
 								fieldState: { error },
 							}) => (
 								<UploadField
-									placeholder="Photo"
+									placeholder="Фото"
 									error={error}
 									folder="actors"
 									image={value}
@@ -65,12 +65,12 @@ const ActorEdit: FC = () => {
 								/>
 							)}
 							rules={{
-								required: 'Photo is required!',
+								required: 'Нет фото!',
 							}}
 						/>
 					</div>
 
-					<Button>Update</Button>
+					<Button>Обновить</Button>
 				</form>
 			)}
 		</Meta>
