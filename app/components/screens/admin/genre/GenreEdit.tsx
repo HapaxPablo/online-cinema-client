@@ -15,20 +15,20 @@ import { stripHtml } from 'string-strip-html'
 import dynamic from 'next/dynamic'
 
 const DynamicTextEditor = dynamic(
-	() => import('@/components/ui/from-elements/TextEditor'),
+	() => import('../../../ui/from-elements/TextEditor'),
 	{
 		ssr: false,
 	}
 )
 
-const GenreEdit: FC<IGenreEditInput> = () => {
+const GenreEdit: FC = () => {
 	const {
 		handleSubmit,
 		register,
 		formState: { errors },
+		control,
 		setValue,
 		getValues,
-		control,
 	} = useForm<IGenreEditInput>({
 		mode: 'onChange',
 	})
@@ -36,9 +36,9 @@ const GenreEdit: FC<IGenreEditInput> = () => {
 	const { isLoading, onSubmit } = useGenreEdit(setValue)
 
 	return (
-		<Meta title="Изменить жанр">
+		<Meta title="Edit genre">
 			<AdminNavigation />
-			<Heading title="Изменить жанр" />
+			<Heading title="Edit genre" />
 			<form onSubmit={handleSubmit(onSubmit)} className={formStyles.form}>
 				{isLoading ? (
 					<SkeletonLoader count={3} />
@@ -46,11 +46,14 @@ const GenreEdit: FC<IGenreEditInput> = () => {
 					<>
 						<div className={formStyles.fields}>
 							<Field
-								{...register('name', { required: 'Требуется название!' })}
+								{...register('name', {
+									required: 'Нет названия!',
+								})}
 								placeholder="Название"
 								error={errors.name}
 								style={{ width: '31%' }}
 							/>
+
 							<div style={{ width: '31%' }}>
 								<SlugField
 									generate={() =>
@@ -60,32 +63,35 @@ const GenreEdit: FC<IGenreEditInput> = () => {
 									error={errors.slug}
 								/>
 							</div>
+
 							<Field
-								{...register('icon', { required: 'Требуется иконка(MdIcon)!' })}
-								placeholder="Иконка"
+								{...register('icon', {
+									required: 'Нет иконки(MdIcon)!',
+								})}
+								placeholder="Icon"
 								error={errors.icon}
 								style={{ width: '31%' }}
 							/>
 						</div>
 						<Controller
-							control={control}
 							name="description"
+							control={control}
 							defaultValue=""
 							render={({
 								field: { value, onChange },
 								fieldState: { error },
 							}) => (
 								<DynamicTextEditor
-									onChange={onChange}
-									value={value}
-									error={error}
 									placeholder="Описание"
+									onChange={onChange}
+									error={error}
+									value={value}
 								/>
 							)}
 							rules={{
 								validate: {
 									required: (v) =>
-										(v && stripHtml(v).result.length > 0) || 'Описание пусто!',
+										(v && stripHtml(v).result.length > 0) || 'Нет описания!',
 								},
 							}}
 						/>

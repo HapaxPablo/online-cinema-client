@@ -1,28 +1,19 @@
-import AdminNavigation from '@/components/ui/AdminNavigation/AdminNavigation'
-import Button from '@/components/ui/from-elements/Button'
-import Field from '@/components/ui/from-elements/Field'
-import SlugField from '@/components/ui/from-elements/SlugField/SlugField'
-import Heading from '@/components/ui/heading/Heading'
-import SkeletonLoader from '@/components/ui/SkeletonLoader'
-import Meta from '@/utils/meta/Meta'
-import generateSlug from '@/utils/string/generateSlug'
-import { FC } from 'react'
-import { Controller, useForm } from 'react-hook-form'
 import { IActorEditInput } from './actor-edit.interface'
 import { useActorEdit } from './useActorEdit'
-import formStyles from '../../../ui/from-elements/admin-form.module.scss'
-import { stripHtml } from 'string-strip-html'
-import dynamic from 'next/dynamic'
+import { FC } from 'react'
+import { Controller, useForm } from 'react-hook-form'
+import generateSlug from '@/utils/string/generateSlug'
+import AdminNavigation from '@/components/ui/AdminNavigation/AdminNavigation'
+import Meta from '@/utils/meta/Meta'
+import Heading from '@/components/ui/heading/Heading'
+import formStyles from '@/components/shared/admin/adminForm.module.scss'
+import SkeletonLoader from '@/components/ui/SkeletonLoader'
+import Field from '@/components/ui/from-elements/Field'
+import SlugField from '@/components/ui/from-elements/SlugField/SlugField'
 import UploadField from '@/components/ui/from-elements/UploadField/UploadField'
+import Button from '@/components/ui/from-elements/Button'
 
-const DynamicTextEditor = dynamic(
-	() => import('@/components/ui/from-elements/TextEditor'),
-	{
-		ssr: false,
-	}
-)
-
-const ActorEdit: FC<IActorEditInput> = () => {
+const ActorEdit: FC = () => {
 	const {
 		handleSubmit,
 		register,
@@ -37,53 +28,51 @@ const ActorEdit: FC<IActorEditInput> = () => {
 	const { isLoading, onSubmit } = useActorEdit(setValue)
 
 	return (
-		<Meta title="Изменить актёра">
+		<Meta title="Edit actor">
 			<AdminNavigation />
-			<Heading title="Изменить актёра" />
-			<form onSubmit={handleSubmit(onSubmit)} className={formStyles.form}>
-				{isLoading ? (
-					<SkeletonLoader count={3} />
-				) : (
-					<>
-						<div className={formStyles.fields}>
-							<Field
-								{...register('name', { required: 'Требуется название!' })}
-								placeholder="Название"
-								error={errors.name}
-							/>
-							<SlugField
-								generate={() =>
-									setValue('slug', generateSlug(getValues('name')))
-								}
-								register={register}
-								error={errors.slug}
-							/>
+			<Heading title="Edit actor" />
+			{isLoading ? (
+				<SkeletonLoader count={3} />
+			) : (
+				<form onSubmit={handleSubmit(onSubmit)} className={formStyles.form}>
+					<div className={formStyles.fields}>
+						<Field
+							{...register('name', {
+								required: 'Name is required!',
+							})}
+							placeholder="Name"
+							error={errors.name}
+						/>
+						<SlugField
+							generate={() => setValue('slug', generateSlug(getValues('name')))}
+							register={register}
+							error={errors.slug}
+						/>
+						<Controller
+							name="photo"
+							control={control}
+							defaultValue=""
+							render={({
+								field: { value, onChange },
+								fieldState: { error },
+							}) => (
+								<UploadField
+									placeholder="Photo"
+									error={error}
+									folder="actors"
+									image={value}
+									onChange={onChange}
+								/>
+							)}
+							rules={{
+								required: 'Photo is required!',
+							}}
+						/>
+					</div>
 
-							<Controller
-								control={control}
-								name="photo"
-								defaultValue=""
-								render={({
-									field: { value, onChange },
-									fieldState: { error },
-								}) => (
-									<UploadField
-										onChange={onChange}
-										value={value}
-										error={error}
-										folder="actors"
-										placeholder="Photo"
-									/>
-								)}
-								rules={{
-									required: 'Нужно фото!',
-								}}
-							/>
-						</div>
-						<Button>Обновить</Button>
-					</>
-				)}
-			</form>
+					<Button>Update</Button>
+				</form>
+			)}
 		</Meta>
 	)
 }
