@@ -3,9 +3,14 @@ import { MdDragIndicator } from 'react-icons/md'
 import * as MaterialIcons from 'react-icons/md'
 
 import { TypeMaterialIconName } from '@/shared/types/icon.types'
+import { useRenderClient } from '@/hooks/useRenderClient'
 
 export const MaterialIcon: FC<{ name: TypeMaterialIconName }> = ({ name }) => {
-	const IconComponent = MaterialIcons[name] || MdDragIndicator
+	const { isRenderClient } = useRenderClient()
 
-	return <IconComponent />
+	const IconComponent = MaterialIcons[name]
+
+	if (isRenderClient)
+		return <IconComponent /> || <MaterialIcons.MdDragIndicator />
+	else return null
 }
