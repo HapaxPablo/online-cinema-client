@@ -13,7 +13,7 @@ export const useUsers = () => {
 
 	const queryData = useQuery(
 		['user list', debouncedSearch],
-		() => UserService.getAll(debouncedSearch),
+		() => UserService.getUsers(debouncedSearch),
 		{
 			select: ({ data }) =>
 				data.map(

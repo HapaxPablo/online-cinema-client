@@ -5,6 +5,7 @@ import { IMovieEditInput } from '@/components/screens/admin/movie/movie-edit.int
 import { IMovie } from '@/shared/types/movie.types'
 import { getMoviesUrl } from 'config/api.config'
 
+
 export const MovieService = {
 	async getBySlug(slug: string) {
 		return axiosClassic.get<IMovie>(getMoviesUrl(`/by-slug/${slug}`))
