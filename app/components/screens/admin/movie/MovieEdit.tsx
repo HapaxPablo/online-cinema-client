@@ -154,6 +154,7 @@ const MovieEdit: FC = () => {
 									folder="movies"
 									image={value}
 									onChange={onChange}
+									
 								/>
 							)}
 							rules={{
@@ -176,7 +177,7 @@ const MovieEdit: FC = () => {
 									image={value}
 									onChange={onChange}
 									style={{ marginTop: -25 }}
-									isNoImage
+									isNoImage = {true}
 								/>
 							)}
 							rules={{

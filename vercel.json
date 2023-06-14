@@ -1,0 +1,7 @@
+{
+    "env": {
+        "CLIENT_MAX_BODY_SIZE": "20mb",
+        "API_KEY": "YOUR_API_KEY",
+        "DB_URL": "YOUR_DB_URL"
+      }
+}
