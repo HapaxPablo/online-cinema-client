@@ -2,6 +2,7 @@ import { FC } from 'react'
 
 import { useAuth } from '@/hooks/useAuth'
 
+
 import MenuItem from '../MenuItem'
 
 import LogoutButton from './LogoutButton'
@@ -18,13 +19,13 @@ const AuthItems: FC = () => {
 						item={{
 							icon: 'MdSettings',
 							link: '/profile',
-							title: 'Профиль',
+							title: 'Profile',
 						}}
 					/>
 					<LogoutButton />
 				</>
 			) : (
-				<MenuItem item={{ icon: 'MdLogin', link: '/auth', title: 'Войти' }} />
+				<MenuItem item={{ icon: 'MdLogin', link: '/auth', title: 'Login' }} />
 			)}
 
 			{user?.isAdmin && (
@@ -32,7 +33,7 @@ const AuthItems: FC = () => {
 					item={{
 						icon: 'MdOutlineLock',
 						link: getAdminHomeUrl(),
-						title: 'Панель администратора',
+						title: 'Admin panel',
 					}}
 				/>
 			)}
