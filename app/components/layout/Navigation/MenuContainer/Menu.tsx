@@ -17,7 +17,7 @@ const Menu: FC<{ menu: IMenu }> = ({ menu: { items, title } }) => {
 				{items.map(item => (
 					<MenuItem key={item.link} item={item} />
 				))}
-				{title === 'Главное' ? <DynamicAuthItems /> : null}
+				{title === 'General' ? <DynamicAuthItems /> : null}
 			</ul>
 		</div>
 	)
