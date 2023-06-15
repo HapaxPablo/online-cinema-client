@@ -6,15 +6,21 @@ import Heading from '@/components/ui/heading/Heading'
 import SkeletonLoader from '@/components/ui/SkeletonLoader'
 import Meta from '@/utils/meta/Meta'
 import generateSlug from '@/utils/string/generateSlug'
-import { FC, useEffect, useState } from 'react'
+import { FC } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { IGenreEditInput } from './genre-edit.interface'
 import { useGenreEdit } from './useGenreEdit'
 import formStyles from '../../../ui/from-elements/admin-form.module.scss'
 import { stripHtml } from 'string-strip-html'
-
-// Импортируем TextEditor напрямую из модуля
+import dynamic from 'next/dynamic'
 import TextEditor from '@/components/ui/from-elements/TextEditor'
+
+const DynamicTextEditor = dynamic(
+	() => import('../../../ui/from-elements/TextEditor'),
+	{
+		ssr: false,
+	}
+)
 
 const GenreEdit: FC = () => {
 	const {
@@ -72,25 +78,16 @@ const GenreEdit: FC = () => {
 							name="description"
 							control={control}
 							defaultValue=""
-							render={({
-								field: { value, onChange },
-								fieldState: { error },
-							}) => {
-								// Устанавливаем состояние рендеринга TextEditor после монтирования компонента
-								const [isMounted, setIsMounted] = useState(false);
-								useEffect(() => {
-									setIsMounted(true);
-								}, []);
-
-								return isMounted ? (
+							render={({ field: { value, onChange }, fieldState: { error } }) =>
+								(
 									<TextEditor
 										placeholder="Описание"
 										onChange={onChange}
 										error={error}
 										value={value}
 									/>
-								) : null;
-							}}
+								) 
+							}
 							rules={{
 								validate: {
 									required: (v) =>
@@ -106,4 +103,4 @@ const GenreEdit: FC = () => {
 	)
 }
 
-export default GenreEdit;
+export default GenreEdit
