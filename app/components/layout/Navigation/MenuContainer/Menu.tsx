@@ -1,13 +1,13 @@
-import dynamic from 'next/dynamic'
-import { FC } from 'react'
-import AuthItems from './auth/AuthItems'
-import { IMenu } from './menu.interface'
-import styles from './Menu.module.scss'
-import MenuItem from './MenuItem'
+import dynamic from 'next/dynamic';
+import { FC } from 'react';
+import AuthItems from './auth/AuthItems';
+import { IMenu } from './menu.interface';
+import styles from './Menu.module.scss';
+import MenuItem from './MenuItem';
 
-const DynamicAuthItems = dynamic(() => import('./auth/AuthItems'), {
+const DynamicAuthItems = dynamic(() => import('./auth/AuthItems') as any, {
 	ssr: false,
-})
+});
 
 const Menu: FC<{ menu: IMenu }> = ({ menu: { items, title } }) => {
 	return (
@@ -20,7 +20,7 @@ const Menu: FC<{ menu: IMenu }> = ({ menu: { items, title } }) => {
 				{title === 'Главное' ? <DynamicAuthItems /> : null}
 			</ul>
 		</div>
-	)
-}
+	);
+};
 
-export default Menu
+export default Menu;
