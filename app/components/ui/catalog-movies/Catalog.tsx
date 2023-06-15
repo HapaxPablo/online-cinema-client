@@ -7,7 +7,6 @@ import { ICatalog } from './catalog.interface'
 import Meta from '@/utils/meta/Meta'
 import { getMovieUrl } from 'config/url.config'
 
-
 const Catalog: FC<ICatalog> = ({ title, description, movies }) => {
 	return (
 		<Meta title={title} description={description}>

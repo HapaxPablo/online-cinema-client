@@ -154,7 +154,6 @@ const MovieEdit: FC = () => {
 									folder="movies"
 									image={value}
 									onChange={onChange}
-									
 								/>
 							)}
 							rules={{
@@ -171,13 +170,13 @@ const MovieEdit: FC = () => {
 								fieldState: { error },
 							}) => (
 								<UploadField
-									placeholder="Видео"
+									placeholder="Video"
 									error={error}
 									folder="movies"
 									image={value}
 									onChange={onChange}
 									style={{ marginTop: -25 }}
-									isNoImage = {true}
+									isNoImage
 								/>
 							)}
 							rules={{
