@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import AuthButton from './AuthButton'
-import styles from './AuthPlaceholder.module.scss'
+import styles from './AuthPlaceHolder.module.scss'
 
 const AuthPlaceholder: FC<{ slug: string }> = ({ slug }) => {
 	return (
