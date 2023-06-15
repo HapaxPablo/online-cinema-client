@@ -19,12 +19,14 @@ const VideoPlayer: FC<IVideoPlayer> = ({ videoSource, slug }) => {
 		>
 			{user ? (
 				<>
-					<video
-						ref={videoRef}
-						className={styles.video}
-						src={`${videoSource}#t=8`}
-						preload="metadata"
-					/>
+					<div className={styles.videoContainer}>
+						<video
+							ref={videoRef}
+							className={styles.video}
+							src={`${videoSource}#t=8`}
+							preload="metadata"
+						/>
+					</div>
 
 					<div className={styles.progressBarContainer}>
 						<div
@@ -82,3 +84,4 @@ const VideoPlayer: FC<IVideoPlayer> = ({ videoSource, slug }) => {
 }
 
 export default VideoPlayer
+
