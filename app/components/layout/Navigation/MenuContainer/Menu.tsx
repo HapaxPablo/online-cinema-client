@@ -14,10 +14,14 @@ const Menu: FC<{ menu: IMenu }> = ({ menu: { items, title } }) => {
 		<div className={styles.menu}>
 			<div className={styles.heading}>{title}</div>
 			<ul className={styles.ul}>
-				{items.map(item => (
+				{items.map((item) => (
 					<MenuItem key={item.link} item={item} />
 				))}
+<<<<<<< HEAD
 				{title === 'Главное' ? <DynamicAuthItems /> : null}
+=======
+				{title === 'Generals' ? <DynamicAuthItems /> : null}
+>>>>>>> 93eb52ade1f4412143ed7f2a9a73df2b728044a7
 			</ul>
 		</div>
 	)
