@@ -15,11 +15,14 @@ import { stripHtml } from 'string-strip-html'
 import dynamic from 'next/dynamic'
 
 const DynamicTextEditor = dynamic(
-	() => import('../../../ui/from-elements/TextEditor'),
+	() =>
+		import('@/components/ui/from-elements/TextEditor').then(
+			(module) => module.default
+		),
 	{
 		ssr: false,
 	}
-)
+)	
 
 const GenreEdit: FC = () => {
 	const {
@@ -87,6 +90,7 @@ const GenreEdit: FC = () => {
 									error={error}
 									value={value}
 								/>
+								
 							)}
 							rules={{
 								validate: {
