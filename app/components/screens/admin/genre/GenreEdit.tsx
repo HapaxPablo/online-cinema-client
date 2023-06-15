@@ -13,7 +13,6 @@ import { useGenreEdit } from './useGenreEdit'
 import formStyles from '../../../ui/from-elements/admin-form.module.scss'
 import { stripHtml } from 'string-strip-html'
 import dynamic from 'next/dynamic'
-import TextEditor from '@/components/ui/from-elements/TextEditor'
 
 const DynamicTextEditor = dynamic(
 	() => import('../../../ui/from-elements/TextEditor'),
@@ -78,16 +77,17 @@ const GenreEdit: FC = () => {
 							name="description"
 							control={control}
 							defaultValue=""
-							render={({ field: { value, onChange }, fieldState: { error } }) =>
-								(
-									<TextEditor
-										placeholder="Описание"
-										onChange={onChange}
-										error={error}
-										value={value}
-									/>
-								) 
-							}
+							render={({
+								field: { value, onChange },
+								fieldState: { error },
+							}) => (
+								<DynamicTextEditor
+									placeholder="Описание"
+									onChange={onChange}
+									error={error}
+									value={value}
+								/>
+							)}
 							rules={{
 								validate: {
 									required: (v) =>

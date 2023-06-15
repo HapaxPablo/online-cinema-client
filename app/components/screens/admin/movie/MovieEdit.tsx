@@ -15,7 +15,6 @@ import { useAdminActors } from './useAdminActors'
 import { useAdminGenres } from './useAdminGenres'
 import { useMovieEdit } from './useMovieEdit'
 import formStyles from '@/ui/from-elements/admin-form.module.scss'
-import Select from '@/ui/select/Select'
 
 const DynamicSelect = dynamic(() => import('@/ui/select/Select'), {
 	ssr: false,
@@ -92,7 +91,7 @@ const MovieEdit: FC = () => {
 								required: 'Выберите хотя бы один жанр!',
 							}}
 							render={({ field, fieldState: { error } }) => (
-								<Select
+								<DynamicSelect
 									error={error}
 									field={field}
 									placeholder="Жанры"
@@ -109,7 +108,7 @@ const MovieEdit: FC = () => {
 								required: 'Выберите хотя бы одного актёра!',
 							}}
 							render={({ field, fieldState: { error } }) => (
-								<Select
+								<DynamicSelect
 									error={error}
 									field={field}
 									placeholder="Актёры"
