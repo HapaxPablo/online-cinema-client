@@ -1,12 +1,12 @@
-import dynamic from 'next/dynamic'
-import { FC } from 'react'
+import dynamic from 'next/dynamic';
+import { FC } from 'react';
 
-import Menu from './Menu'
-import { menus } from './menu.data'
+import Menu from './Menu';
+import { menus } from './menu.data';
 
-const DynamicGenreMenu = dynamic(() => import('./genres/GenreMenu'), {
+const DynamicGenreMenu = dynamic(() => import('./genres/GenreMenu') as any, {
 	ssr: false,
-})
+});
 
 const MenuContainer: FC = () => {
 	return (
@@ -15,7 +15,7 @@ const MenuContainer: FC = () => {
 			<DynamicGenreMenu />
 			<Menu menu={{ title: 'Главное', items: [] }} />
 		</div>
-	)
-}
+	);
+};
 
-export default MenuContainer
+export default MenuContainer;
