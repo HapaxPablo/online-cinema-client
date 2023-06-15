@@ -176,7 +176,7 @@ const MovieEdit: FC = () => {
 									image={value}
 									onChange={onChange}
 									style={{ marginTop: -25 }}
-									isNoImage
+									isNoImage={true}
 								/>
 							)}
 							rules={{
