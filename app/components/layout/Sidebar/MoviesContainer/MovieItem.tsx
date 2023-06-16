@@ -1,7 +1,6 @@
 import { MaterialIcon } from '@/components/ui/MaterialIcon'
 import { getGenresListEach } from '@/utils/movie/getGenreList'
-import { getGenresUrl } from 'config/api.config'
-import { getMovieUrl } from 'config/url.config'
+import { getGenreUrl, getMovieUrl } from 'config/url.config'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
@@ -27,8 +26,8 @@ const MovieItem: FC<{ movie: IWidgetMovie }> = ({ movie }) => {
 				<div>
 					<div className={styles.title}>{movie.title}</div>
 					<div className={styles.genres}>
-						{movie.genres.map(({ slug, name, _id }, idx) => (
-							<Link key={_id} href={getGenresUrl(slug)} legacyBehavior>
+					{movie.genres.map(({ slug, name, _id }, idx) => (
+							<Link key={_id} href={getGenreUrl(slug)} legacyBehavior>
 								<a>{getGenresListEach(idx, movie.genres.length, name)}</a>
 							</Link>
 						))}
