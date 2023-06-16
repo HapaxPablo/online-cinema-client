@@ -10,11 +10,11 @@ const nextConfig = {
 		return [
 			{
 				source: '/api/:path*',
-				destination: 'http://localhost:4200/api/:path*',
+				destination: 'https://cinema-server-1p4o.onrender.com/api/:path*',
 			},
 			{
 				source: '/uploads/:path*',
-				destination: 'http://localhost:4200/uploads/:path*',
+				destination: 'https://cinema-server-1p4o.onrender.com/uploads/:path*',
 			},
 		]
 	},
