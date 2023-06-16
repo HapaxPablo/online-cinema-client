@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps = async () => {
 			bigPoster: m.bigPoster,
 		}))
 
-		const actors: IGalleryItem[] = dataActors.slice(0, 7).map((a) => ({
+		const actors: IGalleryItem[] = dataActors.slice(0, 5).map((a) => ({
 			name: a.name,
 			posterPath: a.photo,
 			url: getActorUrl(a.slug),
