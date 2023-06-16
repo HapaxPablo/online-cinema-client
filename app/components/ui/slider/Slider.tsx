@@ -1,10 +1,10 @@
 import { FC } from 'react'
+import { CSSTransition } from 'react-transition-group'
 import SlideArrow from './SlideArrow/SlideArrow'
 import SlideItem from './SlideItem'
 import { ISlide } from './slider.interface'
 import styles from './Slider.module.scss'
 import { useSlider } from './useSlider'
-import { CSSTransition } from 'react-transition-group'
 
 interface ISlider {
 	buttonTitle?: string
