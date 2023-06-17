@@ -1,12 +1,13 @@
+import PopularMovie from '@/components/screens/admin/home/Statistics/PopularMovie'
 import { FC } from 'react'
-import FavoriteMovies from './FavoritesMovies/FavoriteMovies'
-import PopularMovies from './PopularMovies'
+import FavoriteMovieList from './FavoritesMovies/FavoriteMovies'
+import PopularMovieList from './PopularMovies'
 
 const MoviesContainer: FC = () => {
 	return (
 		<div>
-			<PopularMovies />
-			<FavoriteMovies />
+			<PopularMovieList />
+			<FavoriteMovieList />
 		</div>
 	)
 }
