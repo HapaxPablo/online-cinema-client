@@ -8,9 +8,17 @@ import { useRenderClient } from '@/hooks/useRenderClient'
 export const MaterialIcon: FC<{ name: TypeMaterialIconName }> = ({ name }) => {
 	const { isRenderClient } = useRenderClient()
 
-	const IconComponent = MaterialIcons[name]
+	let IconComponent
 
-	if (isRenderClient)
-		return <IconComponent /> || <MaterialIcons.MdDragIndicator />
-	else return null
+	if (MaterialIcons.hasOwnProperty(name)) {
+		IconComponent = MaterialIcons[name]
+	} else {
+		IconComponent = MdDragIndicator
+	}
+
+	if (isRenderClient) {
+		return <IconComponent />
+	} else {
+		return null
+	}
 }
