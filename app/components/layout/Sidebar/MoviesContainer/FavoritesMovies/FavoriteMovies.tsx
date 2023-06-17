@@ -11,11 +11,20 @@ const FavoriteMovieList: FC = () => {
 
 	if (!user) return <NotAuthFavorites />
 
-	return isLoading ? (
-		<div className="mt-11">
-			<SkeletonLoader count={3} className="h-28 mb-4" />
-		</div>
-	) : (
+	if (isLoading) {
+		try {
+			return (
+				<div className="mt-11">
+					<SkeletonLoader count={3} className="h-28 mb-4" />
+				</div>
+			)
+		} catch (error) {
+			console.error('Error in SkeletonLoader:', error)
+			// Дополнительные действия по обработке ошибки, если нужно
+		}
+	}
+
+	return (
 		<MovieList
 			list={{
 				link: '/favorites',
