@@ -1,5 +1,5 @@
 import cn from 'classnames'
-import Image from 'next/image'
+import Image from "next/image"
 import Link from 'next/link'
 import { FC } from 'react'
 
@@ -8,7 +8,7 @@ import { IGalleryItemProps } from './gallery.types'
 
 const GalleryItem: FC<IGalleryItemProps> = ({ item, variant }) => {
 	return (
-		<Link href={item.url} legacyBehavior>
+        <Link href={item.url} legacyBehavior>
 			<a
 				className={cn(styles.item, {
 					[styles.withText]: item.content,
@@ -17,12 +17,12 @@ const GalleryItem: FC<IGalleryItemProps> = ({ item, variant }) => {
 				})}
 			>
 				<Image
-					alt={item.name}
-					src={item.posterPath}
-					layout="fill"
-					draggable={false}
-					priority
-				/>
+                    alt={item.name}
+                    src={item.posterPath}
+                    draggable={false}
+                    priority
+                    fill
+                    sizes="100vw" />
 				{item.content && (
 					<div className={styles.content}>
 						<div className={styles.title}>{item.content.title}</div>
@@ -33,7 +33,7 @@ const GalleryItem: FC<IGalleryItemProps> = ({ item, variant }) => {
 				)}
 			</a>
 		</Link>
-	)
+    );
 }
 
 export default GalleryItem

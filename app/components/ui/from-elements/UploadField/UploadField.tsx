@@ -1,5 +1,5 @@
 import cn from 'classnames'
-import Image from 'next/image'
+import Image from "next/image"
 import { FC } from 'react'
 import SkeletonLoader from '../../SkeletonLoader'
 import { IUploadField } from '../form.interface'
@@ -19,7 +19,7 @@ const UploadField: FC<IUploadField> = ({
 	const { uploadImage, isLoading } = useUpload(onChange, folder)
 
 	return (
-		<div className={cn(styles.field, styles.uploadField)} style={style}>
+        <div className={cn(styles.field, styles.uploadField)} style={style}>
 			<div className={styles.uploadFlex}>
 				<label>
 					<span>{placeholder}</span>
@@ -31,13 +31,13 @@ const UploadField: FC<IUploadField> = ({
 						{isLoading ? (
 							<SkeletonLoader count={1} className="w-full h-full" />
 						) : (
-							image && <Image src={image} alt="" layout="fill" unoptimized />
+							image && <Image src={image} alt="" unoptimized fill sizes="100vw" />
 						)}
 					</div>
 				)}
 			</div>
 		</div>
-	)
+    );
 }
 
 export default UploadField

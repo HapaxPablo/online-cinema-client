@@ -1,5 +1,5 @@
 import cn from 'classnames'
-import Image from 'next/image'
+import Image from "next/image"
 import Link from 'next/link'
 import { FC } from 'react'
 import { useQuery } from 'react-query'
@@ -20,7 +20,7 @@ const PopularMovie: FC = () => {
 	)
 
 	return (
-		<div className={cn(styles.block, styles.popular)}>
+        <div className={cn(styles.block, styles.popular)}>
 			<SubHeading title="Популярный фильм" />
 			{isLoading ? (
 				<SkeletonLoader className="h-48" />
@@ -31,20 +31,23 @@ const PopularMovie: FC = () => {
 						<Link legacyBehavior href={getMovieUrl(movie.slug)}>
 							<a>
 								<Image
-									width={400}
-									height={176}
-									src={movie.bigPoster}
-									alt={movie.title}
-									className={styles.image}
-									unoptimized
-								/>
+                                    width={400}
+                                    height={176}
+                                    src={movie.bigPoster}
+                                    alt={movie.title}
+                                    className={styles.image}
+                                    unoptimized
+                                    style={{
+                                        maxWidth: "100%",
+                                        height: "auto"
+                                    }} />
 							</a>
 						</Link>
 					</>
 				)
 			)}
 		</div>
-	)
+    );
 }
 
 export default PopularMovie

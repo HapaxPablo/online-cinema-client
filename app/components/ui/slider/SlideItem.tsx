@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/image"
 import { useRouter } from 'next/router'
 import { FC } from 'react'
 import { ISlide } from './slider.interface'
@@ -14,17 +14,17 @@ const SlideItem: FC<ISlideItem> = ({ slide, buttonTitle = 'Смотреть' }) 
 	const { push } = useRouter()
 
 	return (
-		<div className={styles.slide}>
+        <div className={styles.slide}>
 			{slide.bigPoster && (
 				<Image
-					layout="fill"
-					className={styles.image}
-					src={slide.bigPoster}
-					alt={slide.title}
-					draggable={false}
-					unoptimized
-					priority
-				/>
+                    className={styles.image}
+                    src={slide.bigPoster}
+                    alt={slide.title}
+                    draggable={false}
+                    unoptimized
+                    priority
+                    fill
+                    sizes="100vw" />
 			)}
 			<div className={styles.content}>
 				<div className={styles.heading}>{slide.title}</div>
@@ -34,7 +34,7 @@ const SlideItem: FC<ISlideItem> = ({ slide, buttonTitle = 'Смотреть' }) 
 				</button>
 			</div>
 		</div>
-	)
+    );
 }
 
 export default SlideItem

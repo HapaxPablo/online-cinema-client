@@ -2,7 +2,7 @@ import { MaterialIcon } from '@/components/ui/MaterialIcon'
 import { getGenresListEach } from '@/utils/movie/getGenreList'
 import { getGenresUrl } from 'config/api.config'
 import { getMovieUrl } from 'config/url.config'
-import Image from 'next/image'
+import Image from "next/image"
 import Link from 'next/link'
 import { FC } from 'react'
 import { IWidgetMovie } from './movie-list.interface'
@@ -11,17 +11,20 @@ import styles from './MovieList.module.scss'
 
 const MovieItem: FC<{ movie: IWidgetMovie }> = ({ movie }) => {
 	return (
-		<div className={styles.item}>
+        <div className={styles.item}>
 			<Link legacyBehavior href={getMovieUrl(movie.slug)}>
 				<a>
 					<Image
-						alt={movie.title}
-						width={65}
-						height={97}
-						src={movie.poster}
-						draggable={false}
-						priority
-					/>
+                        alt={movie.title}
+                        width={65}
+                        height={97}
+                        src={movie.poster}
+                        draggable={false}
+                        priority
+                        style={{
+                            maxWidth: "100%",
+                            height: "auto"
+                        }} />
 				</a>
 			</Link>
 			<div className={styles.info}>
@@ -41,7 +44,7 @@ const MovieItem: FC<{ movie: IWidgetMovie }> = ({ movie }) => {
 				</div>
 			</div>
 		</div>
-	)
+    );
 }
 
 export default MovieItem
