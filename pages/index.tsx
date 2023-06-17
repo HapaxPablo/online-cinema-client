@@ -37,11 +37,13 @@ export const getStaticProps: GetStaticProps = async () => {
 			},
 		}))
 
-		const trendingMovies: IGalleryItem[] = datatTrendingMovies.map((m) => ({
-			name: m.title,
-			posterPath: m.poster,
-			url: getMovieUrl(m.slug),
-		}))
+		const trendingMovies: IGalleryItem[] = datatTrendingMovies
+			.slice(0, 7)
+			.map((m) => ({
+				name: m.title,
+				posterPath: m.poster,
+				url: getMovieUrl(m.slug),
+			}))
 
 		return {
 			props: {
@@ -49,7 +51,6 @@ export const getStaticProps: GetStaticProps = async () => {
 				slides,
 				trendingMovies,
 			} as IHome,
-			revalidate: 60,
 		}
 	} catch (error) {
 		console.log(errorCatch(error))

@@ -21,15 +21,16 @@ const TextEditor: FC<ITextEditor> = ({
 	const [isUpdated, setIsUpdated] = useState(false)
 
 	useEffect(() => {
-		if (isUpdated) return
-		const defaultValue = value || ''
-		const blocksFromHtml = htmlToDraft(defaultValue)
-		const contentSate = ContentState.createFromBlockArray(
-			blocksFromHtml.contentBlocks,
-			blocksFromHtml.entityMap
-		)
-		const newEditorState = EditorState.createWithContent(contentSate)
-		setEditorState(newEditorState)
+		if (!isUpdated) {
+			const defaultValue = value ? value : ''
+			const blocksFromHtml = htmlToDraft(defaultValue)
+			const contentState = ContentState.createFromBlockArray(
+				blocksFromHtml.contentBlocks,
+				blocksFromHtml.entityMap
+			)
+			const newEditorState = EditorState.createWithContent(contentState)
+			setEditorState(newEditorState)
+		}
 	}, [value, isUpdated])
 
 	const onEditorStatechange = (editorState: EditorState) => {

@@ -7,8 +7,8 @@ const SkeletonLoader: FC<SkeletonProps> = ({ className, ...rest }) => {
 	return (
 		<Skeleton
 			{...rest}
-			baseColor='#1F2125'
-			highlightColor='#282A2E'
+			baseColor="#1F2125"
+			highlightColor="#282A2E"
 			className={cn('rounded-lg', className)}
 		/>
 	)
