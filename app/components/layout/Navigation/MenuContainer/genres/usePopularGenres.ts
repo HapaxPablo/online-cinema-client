@@ -19,7 +19,7 @@ export const usePopularGenres = () => {
 								title: genre.name,
 							} as iMenuItem)
 					)
-					.splice(0, 4),
+					.splice(0, 5),
 		}
 	)
 
