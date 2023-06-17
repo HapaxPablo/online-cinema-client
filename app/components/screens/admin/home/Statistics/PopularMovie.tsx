@@ -27,11 +27,11 @@ const PopularMovie: FC = () => {
 			) : (
 				movie && (
 					<>
-						<h3>Opened {movie.countOpened} times</h3>
-						<Link href={getMovieUrl(movie.slug)} legacyBehavior>
+						<h3>Открыто {movie.countOpened} раз</h3>
+						<Link legacyBehavior href={getMovieUrl(movie.slug)}>
 							<a>
 								<Image
-									width={285}
+									width={400}
 									height={176}
 									src={movie.bigPoster}
 									alt={movie.title}

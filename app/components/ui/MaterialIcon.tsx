@@ -14,6 +14,3 @@ export const MaterialIcon: FC<{ name: TypeMaterialIconName }> = ({ name }) => {
 		return <IconComponent /> || <MaterialIcons.MdDragIndicator />
 	else return null
 }
-
-//YAZAEBALSA
-//YAEBALTVOEVSO

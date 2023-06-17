@@ -1,4 +1,3 @@
-import { getContentType } from 'api/api.helpers'
 import axios from 'axios'
 import Cookies from 'js-cookie'
 
@@ -6,6 +5,7 @@ import { IAuthResponse } from '@/store/user/user.interface'
 
 import { removeTokensStorage, saveToStorage } from './auth.helper'
 import { API_URL, getAuthUrl } from 'config/api.config'
+import { getContentType } from 'api/api.helpers'
 
 export const AuthService = {
 	async register(email: string, password: string) {

@@ -4,28 +4,23 @@ import { FC } from 'react'
 import { useQuery } from 'react-query'
 import MovieList from './MovieList'
 
-const PopularMovieList: FC = () => {
+const PopularMovies: FC = () => {
 	const { isLoading, data: popularMovies } = useQuery(
-		'Most popular movie in sidebar',
-		() => MovieService.getMostPopularMovies(),
-		{
-			select: (data) => data.slice(0, 3),
-		}
+		'Popular movies in sidebar',
+		() => MovieService.getMostPopularMovies()
 	)
 
 	return isLoading ? (
-		<div className="mt-11">
-			<SkeletonLoader count={3} className="h-28 mb-4" />
+		<div className='mt-11'>
+			<SkeletonLoader count={3} className='h-28 mb-4' />
 		</div>
 	) : (
 		<MovieList
-			list={{
-				link: '/trending',
-				movies: popularMovies || [],
-				title: 'Популярные фильмы',
-			}}
+			link='/trending'
+			movies={popularMovies || []}
+			title='Популярные фильмы'
 		/>
 	)
 }
 
-export default PopularMovieList
+export default PopularMovies

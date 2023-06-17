@@ -22,7 +22,7 @@ const Home: FC<IHome> = ({ slides, trendingMovies, actors }) => {
 			</div>
 
 			<div>
-				<SubHeading title="Актёры" />
+				<SubHeading title="Акётры" />
 				{actors.length && <Gallery items={actors} />}
 			</div>
 		</Meta>

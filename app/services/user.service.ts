@@ -40,7 +40,7 @@ export const UserService = {
 	},
 
 	async toggleFavorite(movieId: string) {
-		return axios.put(getUsersUrl('/profile/favorites'), {
+		return axios.post(getUsersUrl('/profile/favorites'), {
 			movieId,
 		})
 	},

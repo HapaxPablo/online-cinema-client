@@ -1,6 +1,5 @@
 import Image from 'next/image'
-import React, { FC } from 'react'
-
+import { FC } from 'react'
 import styles from './Banner.module.scss'
 
 interface IBanner {

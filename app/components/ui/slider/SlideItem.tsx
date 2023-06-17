@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { FC } from 'react'
 import { ISlide } from './slider.interface'
+
 import styles from './Slider.module.scss'
 
 interface ISlideItem {
