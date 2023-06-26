@@ -25,7 +25,7 @@ export const useGenres = () => {
 					})
 				),
 			onError: (error) => {
-				toastError(error, 'genre list')
+				toastError(error, 'Список жанров')
 			},
 		}
 	)

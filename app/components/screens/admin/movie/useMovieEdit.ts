@@ -32,10 +32,10 @@ export const useMovieEdit = (setValue: UseFormSetValue<IMovieEditInput>) => {
 		(data: IMovieEditInput) => MovieService.update(movieId, data),
 		{
 			onError: (error) => {
-				toastError(error, 'Обновить жанр')
+				toastError(error, 'Обновить фильма')
 			},
 			onSuccess() {
-				toastr.success('Обновить жанр', 'Успешно!')
+				toastr.success('Обновить фильма', 'Успешно!')
 				push(getAdminUrl('movies'))
 			},
 		}

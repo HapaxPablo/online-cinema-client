@@ -1,13 +1,11 @@
-import { UserService } from "@/services/user.service"
-import { toastError } from "@/utils/toast-error"
-import { getAdminUrl } from "config/url.config"
-import { useRouter } from "next/router"
-import { SubmitHandler, UseFormSetValue } from "react-hook-form"
-import { useMutation, useQuery } from "react-query"
-import { toastr } from "react-redux-toastr"
-import { IUserEditInput } from "./user-edit.interface"
-
-
+import { UserService } from '@/services/user.service'
+import { toastError } from '@/utils/toast-error'
+import { getAdminUrl } from 'config/url.config'
+import { useRouter } from 'next/router'
+import { SubmitHandler, UseFormSetValue } from 'react-hook-form'
+import { useMutation, useQuery } from 'react-query'
+import { toastr } from 'react-redux-toastr'
+import { IUserEditInput } from './user-edit.interface'
 
 export const useUserEdit = (setValue: UseFormSetValue<IUserEditInput>) => {
 	const { query, push } = useRouter()
@@ -34,10 +32,10 @@ export const useUserEdit = (setValue: UseFormSetValue<IUserEditInput>) => {
 		(data: IUserEditInput) => UserService.updateUser(userId, data),
 		{
 			onError(error) {
-				toastError(error, 'Update user')
+				toastError(error, 'Изменение пользователя')
 			},
 			onSuccess() {
-				toastr.success('Update user', 'update was successful')
+				toastr.success('Изменение пользователя', 'Успешно!')
 				push(getAdminUrl('users'))
 			},
 		}

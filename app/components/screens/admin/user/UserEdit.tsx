@@ -9,7 +9,6 @@ import SkeletonLoader from '@/components/ui/SkeletonLoader'
 import AuthFields from '@/components/layout/Navigation/MenuContainer/auth/AuthFields'
 import Button from '@/components/ui/from-elements/Button'
 
-
 const UserEdit: FC = () => {
 	const { handleSubmit, register, formState, setValue, control } =
 		useForm<IUserEditInput>({
@@ -19,7 +18,7 @@ const UserEdit: FC = () => {
 	const { isLoading, onSubmit } = useUserEdit(setValue)
 
 	return (
-		<Meta title="Edit user">
+		<Meta title="Редактировать пользователя">
 			<AdminNavigation />
 			<Heading title="Редактировать пользователя" />
 			<form onSubmit={handleSubmit(onSubmit)} className="admin-form">

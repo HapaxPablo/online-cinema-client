@@ -21,7 +21,7 @@ export const useActorEdit = (setValue: UseFormSetValue<IActorEditInput>) => {
 				})
 			},
 			onError: (error) => {
-				toastError(error, 'Get actor')
+				toastError(error, 'Получение')
 			},
 			enabled: !!query.id,
 		}
@@ -32,10 +32,10 @@ export const useActorEdit = (setValue: UseFormSetValue<IActorEditInput>) => {
 		(data: IActorEditInput) => ActorService.update(actorId, data),
 		{
 			onError: (error) => {
-				toastError(error, 'Обновить жанр')
+				toastError(error, 'Редактирование актёра')
 			},
 			onSuccess() {
-				toastr.success('Обновить жанр', 'Успешно!')
+				toastr.success('Редактирование актёра', 'Успешно!')
 				push(getAdminUrl('actors'))
 			},
 		}

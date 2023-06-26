@@ -36,9 +36,9 @@ const GenreEdit: FC = () => {
 	const { isLoading, onSubmit } = useGenreEdit(setValue)
 
 	return (
-		<Meta title="Edit genre">
+		<Meta title="Редактирование жанра">
 			<AdminNavigation />
-			<Heading title="Edit genre" />
+			<Heading title="Редактирование жанра" />
 			<form onSubmit={handleSubmit(onSubmit)} className={formStyles.form}>
 				{isLoading ? (
 					<SkeletonLoader count={3} />

@@ -28,9 +28,9 @@ const ActorEdit: FC = () => {
 	const { isLoading, onSubmit } = useActorEdit(setValue)
 
 	return (
-		<Meta title="Edit actor">
+		<Meta title="Редактирование актёра">
 			<AdminNavigation />
-			<Heading title="Edit actor" />
+			<Heading title="Редактирование актёра" />
 			{isLoading ? (
 				<SkeletonLoader count={3} />
 			) : (
@@ -40,7 +40,7 @@ const ActorEdit: FC = () => {
 							{...register('name', {
 								required: 'Нет имени!',
 							})}
-							placeholder="Name"
+							placeholder="Имя"
 							error={errors.name}
 						/>
 						<SlugField

@@ -21,7 +21,7 @@ export const useGenreEdit = (setValue: UseFormSetValue<IGenreEditInput>) => {
 				})
 			},
 			onError: (error) => {
-				toastError(error, 'Get genre')
+				toastError(error, 'Получение')
 			},
 			enabled: !!query.id,
 		}

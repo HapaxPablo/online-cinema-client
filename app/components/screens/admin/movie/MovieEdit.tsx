@@ -37,9 +37,9 @@ const MovieEdit: FC = () => {
 	const { data: actors, isLoading: isActorsLoading } = useAdminActors()
 
 	return (
-		<Meta title="Edit movie">
+		<Meta title="Редактирование фильма">
 			<AdminNavigation />
-			<Heading title="Edit movie" />
+			<Heading title="Редактирование фильма" />
 			{isLoading ? (
 				<SkeletonLoader count={5} />
 			) : (
@@ -170,7 +170,7 @@ const MovieEdit: FC = () => {
 								fieldState: { error },
 							}) => (
 								<UploadField
-									placeholder="Video"
+									placeholder="Видео"
 									error={error}
 									folder="movies"
 									image={value}
